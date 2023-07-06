@@ -50,32 +50,32 @@ export default ({
 
       var filtro = ''; 
       if(this.idh == null || this.moeda == null || this.continente == null || this.lingua == null || this.estimPop == null){
-        const response = await axios.get('https://paises-em-foco-backend.vercel.app/api/paises');
+        const response = await axios.get('https://paises-em-foco-backend.onrender.com/api/paises');
         filtro = response.data;
         console.log(filtro);
       }
       if(this.idh != null){
-        const res = await axios.get("https://paises-em-foco-backend.vercel.app/api/paises-por-nivel-idh/" + this.idh);
+        const res = await axios.get("https://paises-em-foco-backend.onrender.com/api/paises-por-nivel-idh/" + this.idh);
         filtro = res.data;
         console.log(filtro);
       }
       if(this.moeda != null){
-        const res = await axios.get("https://paises-em-foco-backend.vercel.app/api/paises-por-moeda/" + this.moeda);
+        const res = await axios.get("https://paises-em-foco-backend.onrender.com/api/paises-por-moeda/" + this.moeda);
         filtro = res.data;
         console.log(filtro);
       }
       if(this.continente != null){
-        const res = await axios.get("https://paises-em-foco-backend.vercel.app/api/paises-por-continente/" + this.continente);
+        const res = await axios.get("https://paises-em-foco-backend.onrender.com/api/paises-por-continente/" + this.continente);
         filtro = res.data;
         console.log(filtro);
       }
       if(this.lingua != null){
-        const res = await axios.get("https://paises-em-foco-backend.vercel.app/api/paises-por-lingua/" + this.lingua);
+        const res = await axios.get("https://paises-em-foco-backend.onrender.com/api/paises-por-lingua/" + this.lingua);
         filtro = res.data;
         console.log(filtro);
       }
       if(this.estimPop != null){
-        const res = await axios.get("https://paises-em-foco-backend.vercel.app/api/paises-por-estimativa-populacional/" + this.estimPop);
+        const res = await axios.get("https://paises-em-foco-backend.onrender.com/api/paises-por-estimativa-populacional/" + this.estimPop);
         filtro = res.data;
         console.log(filtro);
       }
