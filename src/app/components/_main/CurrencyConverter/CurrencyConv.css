@@ -1,0 +1,104 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+#currencyplot *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+#currencyplot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.wrapper header{
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+}
+.wrapper form{
+  margin: 40px 0 20px 0;
+}
+form :where(input, select, button){
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+form p{
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+form input{
+  height: 40px;
+  font-size: 17px;
+  padding: 0 15px;
+  border: solid 1.5px #D3D3D3;
+  text-align: center;
+}
+form input:focus{
+  box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+  outline-width: 0px;
+}
+form .drop-list{
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.drop-list .select-box{
+  display: flex;
+  width: 115px;
+  height: 40px;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: center;
+  border: solid 1.5px #D3D3D3;
+}
+
+.select-box img{
+  max-width: 21px;
+}
+.select-box select{
+  width: auto;
+  font-size: 16px;
+  background: none;
+  margin: 0 -5px 0 5px;
+}
+.select-box select::-webkit-scrollbar{
+  width: 8px;
+}
+.select-box select::-webkit-scrollbar-track{
+  background: #fff;
+}
+.select-box select::-webkit-scrollbar-thumb{
+  background: #888;
+  border-radius: 8px;
+  border-right: 2px solid #ffffff;
+}
+.drop-list .icon{
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 22px;
+}
+form #exchange-rate{
+  font-size: 15px;
+  /* margin: 20px 0 30px; */
+  text-align: center;
+  margin-top: 12px;
+}
+form button{
+  height: 52px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  background: #57ACE9;
+  transition: 0.3s ease;
+  
+}
+form button:hover{
+  background: #7fc2f5;
+}

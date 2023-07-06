@@ -1,0 +1,351 @@
+<footer>
+    <nav>
+        <div class="dropdup" id="drop">
+            <button class="btn btn-info dropdown-toggle text-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Nível IDH
+            </button>
+            <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Muito alto" @input="saveValue('idh', $event.target.value)" id="Check1" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check1">Muito alto</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Alto" @input="saveValue('idh', $event.target.value)" id="Check2" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check2">Alto</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Médio" @input="saveValue('idh', $event.target.value)" id="Check3" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check3">Médio</label>
+                        </div>             
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Baixo" @input="saveValue('idh', $event.target.value)" id="Check4" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check4">Baixo</label>
+                        </div>
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item text-secondary" href="#">
+                        <button type="button" class="btn btn-light" @click="limparFiltro()">Limpar filtro</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdup ms-3">
+
+            <button class="btn btn-info dropdown-toggle text-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Moeda
+            </button>
+            <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="USD" @input="saveValue('moeda', $event.target.value)" id="Check5" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check5">Dólar dos EUA</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="EUR" @input="saveValue('moeda', $event.target.value)" id="Check6" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check6">Euro</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="GBP" @input="saveValue('moeda', $event.target.value)" id="Check7" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check7">Libra esterlina</label>
+                        </div>             
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="JPY" @input="saveValue('moeda', $event.target.value)" id="Check8" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check8">Iene japonês</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                <a class="dropdown-item text-dark" href="#">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="AUD" @input="saveValue('moeda', $event.target.value)" id="Check9" @change="handleRadioChange"/>
+                        <label class="form-check-label" for="Check9">Dólar australiano</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item text-dark" href="#">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="CHF" @input="saveValue('moeda', $event.target.value)" id="Check10" @change="handleRadioChange"/>
+                        <label class="form-check-label" for="Check10">Franco suíço</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item text-dark" href="#">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="CAD" @input="saveValue('moeda', $event.target.value)" id="Check11" @change="handleRadioChange"/>
+                        <label class="form-check-label" for="Check11">Dólar canadiano</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item text-dark" href="#">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="CNY" @input="saveValue('moeda', $event.target.value)" id="Check12" @change="handleRadioChange"/>
+                        <label class="form-check-label" for="Check12">Iuane chinês</label>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item text-dark" href="#">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="INR" @input="saveValue('moeda', $event.target.value)" id="Check13" @change="handleRadioChange"/>
+                        <label class="form-check-label" for="Check13">Rupia indiana</label>
+                    </div>
+                </a>
+            </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item text-secondary" href="#">
+                        <button type="button" class="btn btn-light" @click="limparFiltro()">Limpar filtro</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdup ms-3">
+
+            <button class="btn btn-info dropdown-toggle text-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Continente
+            </button>
+            <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Ásia" @input="saveValue('continente', $event.target.value)" id="Check14" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check14">Ásia</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="África" @input="saveValue('continente', $event.target.value)" id="Check15" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check15">África</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Europa" @input="saveValue('continente', $event.target.value)" id="Check16" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check16">Europa</label>
+                        </div>             
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Oceania" @input="saveValue('continente', $event.target.value)" id="Check17" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check17">Oceania</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="América" @input="saveValue('continente', $event.target.value)" id="Check18" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check18">América</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Antártida" @input="saveValue('continente', $event.target.value)" id="Check18" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check18">Antártida</label>
+                        </div>
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item text-secondary" href="#">
+                        <button type="button" class="btn btn-light" @click="limparFiltro()">Limpar filtro</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdup ms-3">
+            <button class="btn btn-info dropdown-toggle text-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Língua
+            </button>
+            <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Inglês" @input="saveValue('lingua', $event.target.value)" id="Check19" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check19">Inglês</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Português" @input="saveValue('lingua', $event.target.value)" id="Check20" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check20">Português</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Francês" @input="saveValue('lingua', $event.target.value)" id="Check21" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check21">Francês</label>
+                        </div>             
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Mandarim" @input="saveValue('lingua', $event.target.value)" id="Check22" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check22">Mandarim</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Espanhol" @input="saveValue('lingua', $event.target.value)" id="Check23" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check23">Espanhol</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Hindi" @input="saveValue('lingua', $event.target.value)" id="Check24" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check24">Hindi</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Árabe" @input="saveValue('lingua', $event.target.value)" id="Check25" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check25">Árabe</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="Russo" @input="saveValue('lingua', $event.target.value)" id="Check26" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check26">Russo</label>
+                        </div>
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item text-secondary" href="#">
+                        <button type="button" class="btn btn-light" @click="limparFiltro()">Limpar filtro</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdup ms-3">
+            <button class="btn btn-info dropdown-toggle text-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              Estimativa Populacional
+            </button>
+            <ul class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="1000" @input="saveValue('estimPop', $event.target.value)" id="Check27" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check27">Menor que 1000</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="10000" @input="saveValue('estimPop', $event.target.value)" id="Check28" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check28">Menor que 10 000</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="50000" @input="saveValue('estimPop', $event.target.value)" id="Check29" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check29">Menor que 50 000</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="100000" @input="saveValue('estimPop', $event.target.value)" id="Check30" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check30">Menor que 100 000</label>
+                        </div>             
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="500000" @input="saveValue('estimPop', $event.target.value)" id="Check31" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check31">Menor que 500 000</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="1000000" @input="saveValue('estimPop', $event.target.value)" id="Check32" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check32">Menor que 1 000 000</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="100000000" @input="saveValue('estimPop', $event.target.value)" id="Check33" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check33">Menor que 100 000 000</label>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-dark" href="#">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="300000000" @input="saveValue('estimPop', $event.target.value)" id="Check34" @change="handleRadioChange"/>
+                            <label class="form-check-label" for="Check34">Menor que 300 000 000</label>
+                        </div>
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item text-secondary" href="#">
+                        <button type="button" class="btn btn-light" @click="limparFiltro()">Limpar filtro</button>
+                    </a>
+                </li>
+            </ul>
+        </div>   
+    </nav>
+</footer>

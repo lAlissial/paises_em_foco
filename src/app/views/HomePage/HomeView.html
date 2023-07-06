@@ -1,0 +1,16 @@
+<div :style="homeStyle">
+    <div id="mapContainer" :style="mapContainer"></div>
+</div>
+<button id="btn" class="btn btn-primary d-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Informações</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" id="btn-close"></button>
+    </div>
+    <div class="offcanvas-body" id="body">
+        <flag id="flag" :iso="flag" :squared="false"></flag>
+        <div id="popupContent" v-html="popupContent"></div>   
+        <CurrencyComponent></CurrencyComponent>
+        
+    </div>
+</div>

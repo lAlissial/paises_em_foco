@@ -1,0 +1,24 @@
+#flag {
+    width: 15%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+#offcanvasRight {
+    margin-top: 100px;
+    border-radius: 20px;
+    height: 760px;
+    background:rgba(0,0,0,0.5);
+}
+
+#body {
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 13px;
+}
+
+#offcanvasRightLabel{
+    color: white;
+}

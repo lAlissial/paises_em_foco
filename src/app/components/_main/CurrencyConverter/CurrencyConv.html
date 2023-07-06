@@ -1,0 +1,38 @@
+<div class="wrapper" id="currencyplot">
+    <form @submit.prevent>
+    <div class="amount">
+        <p>Insira o valor:</p>
+        <input type="text" v-model="amount" />
+    </div>
+    <div class="drop-list">
+        <div class="from">
+        <p>De</p>
+        <div class="select-box">
+            <img :src="getFlagImageUrl(fromCurrency)" alt="flag" />
+            <select v-model="fromCurrency">
+            <option v-for="(countryCode, currencyCode) in countryList" :value="currencyCode">
+                {{ currencyCode }}
+            </option>
+            </select>
+        </div>
+        </div>
+        <div class="icon mt-4 mx-1" @click="swapCurrencies">
+            <font-awesome-icon :icon="['fas', 'exchange-alt']" />
+        </div>
+        <div class="to">
+        <p>Para</p>
+        <div class="select-box">
+            <img :src="getFlagImageUrl(toCurrency)" alt="flag" />
+            <select v-model="toCurrency">
+            <option v-for="(countryCode, currencyCode) in countryList" :value="currencyCode">
+                {{ currencyCode }}
+            </option>
+            </select>
+        </div>
+        </div>
+    </div>
+    <div id="exchange-rate">{{ exchangeRateText }}</div>
+    <button class="mt-2" @click="getExchangeRate">Obter taxa de câmbio</button>
+    </form>
+</div>
+
